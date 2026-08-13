@@ -1,0 +1,3 @@
+apps/desktop/.vite/**
+apps/desktop/out/**
+node_modules/**

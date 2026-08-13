@@ -1,0 +1,37 @@
+{
+  "name": "@electron-qwen-speech/desktop",
+  "productName": "ElectronQwenSpeech",
+  "type": "commonjs",
+  "version": "0.1.0",
+  "private": true,
+  "main": ".vite/build/main.js",
+  "scripts": {
+    "start": "PNPM_CONFIG_PM_ON_FAIL=warn electron-forge start",
+    "test": "vitest run --config vitest.config.mts",
+    "test:asr:real": "vitest run --config vitest.asr-real.config.mts",
+    "test:speech:real": "vitest run --config vitest.speech-real.config.mts",
+    "test:tts:real": "vitest run --config vitest.tts-real.config.mts",
+    "typecheck": "tsc --project tsconfig.main.json --noEmit && vue-tsc --project tsconfig.renderer.json --noEmit"
+  },
+  "dependencies": {
+    "@electron-qwen-speech/application": "workspace:*",
+    "@electron-qwen-speech/contracts": "workspace:*",
+    "diff": "9.0.0",
+    "vue": "3.5.41"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "7.11.2",
+    "@electron-forge/plugin-vite": "7.11.2",
+    "@electron-forge/shared-types": "7.11.2",
+    "@types/node": "24.13.3",
+    "@vitejs/plugin-vue": "6.0.8",
+    "@vue/compiler-sfc": "3.5.41",
+    "@vue/test-utils": "2.4.11",
+    "electron": "43.3.0",
+    "happy-dom": "20.11.2",
+    "typescript": "6.0.3",
+    "vite": "8.2.1",
+    "vitest": "4.1.10",
+    "vue-tsc": "3.3.9"
+  }
+}

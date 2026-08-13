@@ -1,0 +1,32 @@
+# Operating system and editors
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+secrets/
+
+# Node.js
+node_modules/
+.pnpm-store/
+dist/
+coverage/
+apps/desktop/.vite/
+apps/desktop/renderer/.vite/
+apps/desktop/out/
+
+# Python
+/.venv/
+/services/tts-sidecar/.venv/
+__pycache__/
+*.py[cod]
+
+# Logs and local databases
+*.log
+*.sqlite
+*.sqlite3
+*.db

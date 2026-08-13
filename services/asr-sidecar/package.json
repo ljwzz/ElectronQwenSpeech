@@ -1,0 +1,8 @@
+{
+  "name": "@electron-qwen-speech/asr-sidecar",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "../../.venv/bin/python -m unittest discover -s tests -p 'test_*.py'"
+  }
+}

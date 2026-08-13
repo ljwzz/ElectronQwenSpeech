@@ -1,0 +1,30 @@
+nodeLinker: hoisted
+shellEmulator: true
+trustPolicy: no-downgrade
+saveExact: true
+
+# Electron Forge 7.11.2 的 Inquirer 依赖链固定使用 @types/node 22.20.1。
+# semver@5.7.2 为 2023-07-10 补发布，晚于带 provenance 的 7.5.x，且自身无 attestations，
+# 导致 trustPolicy 按发布时间误判为信任降级；该版本经 npm 团队签名发布，予以排除。
+trustPolicyExclude:
+  - undici-types@6.21.0
+  - semver@5.7.2
+
+packages:
+  - apps/*
+  - packages/*
+  - services/*
+
+# Electron Forge 7.11.2 的 MPS 基线使用 @electron/get 3.0.0；保持该已验证解析，
+# 避免升级到缺少当前 provenance 证据的 3.1.0。
+overrides:
+  '@electron/get@3.0.0>semver': 6.2.0
+  '@electron/get@^3.0.0': 3.0.0
+  cross-spawn@6.0.6>semver: 5.5.0
+
+# Electron Forge 7.11.2 通过 @electron/rebuild 引用官方 @electron/node-gyp Git 依赖。
+blockExoticSubdeps: false
+
+allowBuilds:
+  electron: true
+  esbuild: true
