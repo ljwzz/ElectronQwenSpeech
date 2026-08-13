@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "paths": {
+      "@/*": ["./renderer/src/*"]
+    },
+    "types": ["vite/client"]
+  },
+  "include": [
+    "renderer/**/*.ts",
+    "renderer/**/*.vue",
+    "renderer/**/*.d.ts",
+    "contracts.ts"
+  ]
+}

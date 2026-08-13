@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2022"],
+    "types": ["node"]
+  },
+  "include": [
+    "forge.env.d.ts",
+    "forge.config.ts",
+    "developmentOnly*.ts",
+    "scripts/**/*.ts",
+    "vite.*.config.mts",
+    "vitest.*.config.mts",
+    "contracts.ts",
+    "main/**/*.ts",
+    "preload/**/*.ts"
+  ]
+}
